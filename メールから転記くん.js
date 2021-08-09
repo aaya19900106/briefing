@@ -1,11 +1,11 @@
 function RegExpForm() {
   //データを吐き出す箇所を指定
-  var sheet_url = 'https://docs.google.com/spreadsheets/d/1GWVoPZbXDfzIE5JDWEWOuf1SSjSFkz2QWUl9LcpapIw/edit#gid=0';
-  var sheet_name = '説明会参加者';
+  var sheet_url = "シートのURL";
+  var sheet_name = "シートの名前";
   var ss = SpreadsheetApp.openByUrl(sheet_url);
   var sheet = ss.getSheetByName(sheet_name);
 
-  var zyouken = 'subject:【RUNTEQ キャリア相談会申し込み】お申し込みが来ています。 newer_than:1d'; //検索条件
+  var zyouken = 'subject:【検索したいメールの懸命】 newer_than:1d'; //検索条件
   var thds = GmailApp.search(zyouken, 0, 8);//条件に合致するメールのスレッドを取得
   var messe = GmailApp.getMessagesForThreads(thds);//スレッド内のメールを取得。[スレッド番号][メッセージ番号]の2次元配列になる
 
